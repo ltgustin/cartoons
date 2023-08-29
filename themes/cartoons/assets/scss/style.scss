@@ -1,0 +1,46 @@
+/*!
+Theme Name: Cartoons NFT
+Author: Web Ninja
+Author URI: https://twitter.com/0xwebninja
+Version:1.0.0
+Description: Wordpress theme developed by LTG.
+License: GNU General Public License v3
+License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
+*/
+
+:root { 
+    --color_primary:#2B2263;
+    --color_purple:#C2C0FF;
+    --color_blue:#73D4FE;
+    --color_pink:#FEC0E3;
+    --color_black:#2C2C2C;
+    --color_white:#ffffff;
+    --color_gray:#efefef;
+    --color_gray_dark:#aaaaaa;
+}
+
+// Reset
+@import "core/reset";
+@import "core/mixins";
+@import "core/variables";
+@import "core/utils";
+
+// General Styling
+@import "partials/fonts";
+@import "partials/globals";
+@import "partials/header";
+@import "partials/navigation";
+@import "partials/front-page";
+@import "partials/page";
+@import "partials/forms";
+@import "partials/blocks";
+@import "partials/gutenberg";
+@import "partials/galleries";
+@import "partials/footer";
+@import "partials/modal";
+
+@import "partials/js-loaded";
+
+// 3rd Party
+@import "vendor/datepicker";
+@import "vendor/hamburgers";

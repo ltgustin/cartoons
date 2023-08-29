@@ -1,0 +1,64 @@
+.entry-content .wpcf7 {
+    max-width:rem(700);
+    width:90%;
+    margin:rem(15) auto;
+
+    p {
+        margin:0;
+    }
+
+    .field {
+        position:relative;
+        width:100%;
+    }
+
+    label {
+        font-size:rem(14);
+        padding-left:rem(30);
+    }
+
+    input[type="email"] {
+        height:rem(69);
+        border:2px solid $primary;
+        border-radius:65px;
+        background:white;
+        padding:0 rem(140) 0 rem(25);
+        width:100%;
+        font-size:rem(20);
+    }
+
+    input[type="submit"] {
+        position:absolute;
+        right:0;
+        bottom:0;
+        @extend %btn;
+        background:$primary;
+        color:white;
+        height:rem(69);
+    }
+
+    ::placeholder {
+        color:#B5B2C9;
+        opacity:1;
+    }
+
+    .wpcf7-spinner {
+        position:absolute;
+        right:rem(10);
+        top:0;
+    }
+
+    .wpcf7-not-valid-tip {
+        position:absolute;
+        left:rem(30);
+        bottom:-5rem;
+        width:90%;
+        display:inline-block;
+        font-size:rem(15);
+        font-style:italic;
+    }
+
+    .wpcf7-response-output {
+        // display:none;
+    }
+}

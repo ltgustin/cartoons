@@ -1,0 +1,33 @@
+{
+    "name": "ltg",
+    "version": "1.0.0",
+    "description": "Gulp packages for WP theme development",
+    "main": "gulpfile.js",
+    "browserslist": [
+        "last 3 versions",
+        "IE 11",
+        "iOS >= 9",
+        "Safari >= 9"
+    ],
+    "dependencies": {
+        "autoprefixer": "^9.7.0",
+        "cssnano": "^4.1.10",
+        "gulp": "^4.0.2",
+        "gulp-babel": "^8.0.0",
+        "gulp-cli": "^2.3.0",
+        "gulp-concat": "*",
+        "gulp-notify": "*",
+        "gulp-plumber": "*",
+        "gulp-postcss": "^8.0.0",
+        "gulp-sass": "^4.1.0",
+        "gulp-sourcemaps": "^2.6.5",
+        "gulp-uglify": "^3.0.2",
+        "gulp-util": "*",
+        "postcss-scss": "^4.0.7"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.7.2",
+        "@babel/preset-env": "^7.7.1",
+        "postcss": "^8.0.0"
+    }
+}

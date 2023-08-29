@@ -1,0 +1,42 @@
+// grid
+$xs: 480px;
+$sm: 769px; 
+$sm-max: calc(768px);
+$md: 1024px;
+$lg: 1300px;
+$xl: 1400px;
+
+$header_height_mobile:90px;
+$header_height:135px;
+
+// Colors
+$black: var(--color_black);
+$white: var(--color_white);
+$gray: var(--color_gray);
+$grey: $gray;
+$gray_dark: var(--color_gray_dark);
+$grey_dark: $gray_dark;
+$primary: var(--color_primary);
+$purple: var(--color_purple);
+$blue: var(--color_blue);
+$pink: var(--color_pink);
+
+// Fonts
+$fs: 16;
+$icon: 'cartoons';
+
+$light: 300;
+$regular: 400;
+$bold: 700;
+
+$title: 'vag-rundschrift-d',sans-serif;
+$font: 'Lato', sans-serif;;
+
+// Social Colors
+$facebook: #3b5998;
+$twitter: #00b6f1;
+$youtube: #ff0000;
+$instagrammagenta: #c32aa3;
+$pinterest: #cb2027;
+$googleplus: #df4a32;
+$linkedin: #007bb6;

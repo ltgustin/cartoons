@@ -1,0 +1,87 @@
+:root { 
+    --color_primary: #0047ff;
+    --color_secondary: #ffa510;
+    --color_tertiary: #133977;
+    --color_black: #04071d;
+    --color_white: #ffffff;
+    --color_gray: #f5f8ff;
+    --color_gray_dark: #aaaaaa;
+    /* RGB - needed to run rgba in the css */
+    --color_primary_rgb: 0,71,255;
+    --color_secondary_rgb: 255,165,16;
+    --color_gray_rgb: 245,248,255;
+}
+
+.is-root-container {
+    h1,h2,h3,h4,h5,h6,.h2,.h3 {
+        font-weight:$bold;
+        text-transform:uppercase;
+    }
+
+    ul li::marker {
+        color:$primary;
+    }
+
+    h2 {
+        font-size:26px;
+        text-transform:uppercase;
+    }
+
+    h3,.h3 {
+        font-size:22px;
+    }
+
+    h4 {
+        font-size:20px;
+    }
+
+    h5 {
+        font-size:18px;
+    }
+
+    h6 {
+        font-size:16px;
+    }
+}
+
+/* Main column width */
+.wp-block {
+    max-width: 960px;
+
+    &[data-type="core/columns"] {
+        border:2px dashed #ccc;
+        padding:10px 10px 0 10px;
+    }
+
+    &[data-type="core/spacer"] {
+        border:2px dashed $gray;
+        padding:10px 10px 0 10px;
+    }
+
+    &[data-type="core/cover"] {
+        border:2px dashed #aaa;
+        padding:10px 10px 0 10px;
+    }
+
+    &[data-type="core/button"] {
+        .wp-block-button__link {
+            @extend %btn;
+        }
+    }
+}
+ 
+/* Width of "wide" blocks */
+.wp-block[data-align="wide"] {
+    max-width: 1180px;
+}
+ 
+/* Width of "full-wide" blocks */
+.wp-block[data-align="full"] {
+    max-width: none;
+}
+
+// buttons //
+
+.wp-block-button__link {
+    border-radius:0;
+}

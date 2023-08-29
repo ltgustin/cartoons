@@ -1,0 +1,8 @@
+node_modules
+plugins/*
+uploads/*
+updraft/*
+/index.php
+backups-dup-lite/*
+themes/*
+!themes/cartoons/

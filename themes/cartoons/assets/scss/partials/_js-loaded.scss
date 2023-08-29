@@ -1,0 +1,54 @@
+html.js {
+    
+    $easing : cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    $duration: 500ms;
+    $delay: 250ms;
+
+    // DOWN THE PAGE
+    .animate-down {
+        opacity:0;
+        transform:translateY(-50px);
+        transition:all $duration $easing $delay;
+
+        &.on {
+            opacity:1;
+            transform:translateY(0px);
+        }
+    }
+
+    // UP THE PAGE
+    .animate-up {
+        opacity:0;
+        transform:translateY(50px);
+        transition:all $duration $easing $delay;
+
+        &.on {
+            opacity:1;
+            transform:translateY(0px);
+        }
+    }
+
+    // TO THE RIGHT
+    .animate-right {
+        opacity:0;
+        transform:translateX(-50px);
+        transition:all $duration $easing $delay;
+
+        &.on {
+            opacity:1;
+            transform:translateX(0px);
+        }
+    }
+
+    // TO THE LEFT
+    .animate-left {
+        opacity:0;
+        transform:translateX(50px);
+        transition:all $duration $easing $delay;
+
+        &.on {
+            opacity:1;
+            transform:translateX(0px);
+        }
+    }
+}

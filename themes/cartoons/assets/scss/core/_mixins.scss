@@ -1,0 +1,64 @@
+// Media Queries
+@mixin mq($query) {
+	@media #{$query} { @content; };
+}
+@mixin mqmax($size) {
+	@media only screen and (max-width: $size) { @content; }
+}
+@mixin mqmin($size) {
+	@media only screen and (min-width: $size) { @content; }
+}
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
+
+//.example {font-size: rem(14px);}
+@function rem($size){
+    $remSize: $size/10;
+    @return #{$remSize}rem;
+}
+
+//Simply return white or black based on the provided background color. This is much faster than the high-contrast-color() function, but may not be as accurate to appropriate contrast ratios.
+//.element {background: #123456; color: readable-color(#123456);}
+@function readable-color($bg){
+    $calculated-value: ((red($bg) * 299) + (green($bg) * 587) + (blue($bg) * 114) - 128000) * -1000; //Creates a number either greater than 255 or less than 0
+
+    //While rgb() automatically limits output values to 0-255 in most (all?) browsers, it is safer to check it manually here.
+    @if ( $calculated-value >= 255 ){
+        @return #fff;
+    }
+
+    @return #000;
+}
+
+@function derive-rgb-values-from-hex($hex) {
+    @return red($hex), green($hex), blue($hex);
+}
+
+@mixin afterclear(){
+    &:after{
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " " !important;
+        clear: both;
+        height: 0;
+    }
+}
+
+@mixin hiddencheck(){
+    position: absolute;
+    top:0;
+    left: -9999px;
+    z-index:-100;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    border:none;
+    outline:none;
+    margin:0;
+    padding:0;
+    background:transparent;
+    pointer-events:none;
+}
