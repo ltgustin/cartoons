@@ -26,6 +26,11 @@ if ( !trait_exists('Gutenberg') ){
                 'label' => 'Stat Small',
             ]);
 
+            register_block_style('core/columns', [
+                'name' => 'skinny',
+                'label' => 'Skinny',
+            ]);
+
             register_block_style('core/column', [
                 'name' => 'padding',
                 'label' => 'Padding',

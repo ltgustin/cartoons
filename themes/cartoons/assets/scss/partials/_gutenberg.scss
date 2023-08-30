@@ -100,6 +100,15 @@
         }
     }
 
+    .wp-block-columns {
+        &.is-style-skinny {
+            max-width:rem(980);
+            margin-left:auto;
+            margin-right:auto;
+            grid-gap:rem(40);
+        }
+    }
+
     figure {
         margin:0;
 
