@@ -68,6 +68,107 @@
             padding-bottom:calc(100% - 8px);
         }
     }
+
+    &.cloud-download-wrap {
+        display:flex;
+        align-items:center;
+        flex-wrap:wrap;
+        grid-gap:rem(50);
+
+        @media(min-width:1000px) {
+            flex-wrap:nowrap;
+        }
+
+        .download-left {
+            width:100%;
+
+            img {
+                max-width:rem(270);
+                margin:-8rem auto 0 auto
+            }
+
+            @media(min-width:1000px) {
+                flex-basis:42%;
+            }
+
+            .inner {
+                background:rgba(white,0.5);
+                border:4px solid $primary;
+                border-radius:rem(30);
+                padding:rem(30);
+                text-align:center;
+            }
+        }
+
+        canvas {
+            width:100%;
+            background:#eee url(../../assets/images/guy.svg) no-repeat bottom center /cover;
+            border-radius:rem(30);
+            border:4px solid $primary;
+
+            @media(min-width:1000px) {
+                max-width:58%;
+            }
+        }
+
+        form {
+            display:flex;
+            grid-gap:rem(10);
+            justify-content:center;
+            flex-wrap:wrap;
+        }
+
+        label {
+            font-weight:$bold;
+        }
+
+        input {
+            border:2px solid $primary;
+            border-radius:60px;
+            height:rem(65);
+            font-family:$title;
+            font-size:rem(35);
+            text-align:center;
+            // color:$primary;
+            max-width:rem(175);
+            padding:0 rem(15);
+        }
+
+        .field {
+            margin:rem(15) auto;
+            display:flex;
+            flex-wrap:wrap;
+            grid-gap:rem(10);
+            width:100%;
+            justify-content:center;
+            align-items:center;
+
+            @media(min-width:1000px) {
+                flex-wrap:nowrap;
+            }
+        }
+
+        button {
+            background:$pink;
+            color:$primary;
+
+            &:hover {
+                background:white;
+            }
+        }
+    }
+}
+
+::placeholder {
+    color:#999;
+    opacity:1;
+}
+
+input:valid {
+  color: green;
+}
+input:invalid {
+  color: red;
 }
 
 .img-wrap {
