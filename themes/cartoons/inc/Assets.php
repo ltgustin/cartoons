@@ -61,7 +61,9 @@ if ( !trait_exists('Assets') ){
                     'ajax_url'      => admin_url('admin-ajax.php'),
                     'posts'         => json_encode( $wp_query->query_vars ),
                     'current_page'  => $wp_query->query_vars['paged'] ? $wp_query->query_vars['paged'] : 1,
-                    'max_page'      => $wp_query->max_num_pages
+                    'max_page'      => $wp_query->max_num_pages,
+                    'xapi'          => XAPIKEY,
+                    'xcontract'     => XCONTRACT
                 ));
             }
         }

@@ -35,6 +35,11 @@ if ( !trait_exists('Gutenberg') ){
                 'name' => 'padding',
                 'label' => 'Padding',
             ]);
+
+            register_block_style('core/image', [
+                'name' => 'rounded-gradient',
+                'label' => 'Rounded Gradient',
+            ]);
         }
 
         /* - - - - - - - - - - - - - - - - - - - - - - - - - -

@@ -109,8 +109,48 @@
         }
     }
 
+    .wp-block-image {
+        &.is-style-rounded,
+        &.is-style-rounded-gradient {
+            figure {
+                overflow:hidden;
+                border-radius:rem(30);
+                border:4px solid $primary;
+
+                img {
+                    width:100%;
+                    height:100%;
+                    border-radius:0;
+                }
+            }
+        }
+
+        &.is-style-rounded-gradient {
+            figure {
+                background:linear-gradient(to right, $blue,$purple,$pink );
+            }
+        }
+    }
+
     figure {
         margin:0;
+
+        &.is-style-rounded,
+        &.is-style-rounded-gradient {
+            overflow:hidden;
+            border-radius:rem(30);
+            border:4px solid $primary;
+
+            img {
+                width:100%;
+                height:100%;
+                border-radius:0;
+            }
+        }
+
+        &.is-style-rounded-gradient {
+            background:linear-gradient(to right, $blue,$purple,$pink );
+        }
 
         &.wp-block-image {
             max-width:100%;

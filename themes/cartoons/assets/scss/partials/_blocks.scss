@@ -156,6 +156,40 @@
                 background:white;
             }
         }
+
+        .download-wrap {
+            margin-top:rem(25);
+            display:flex;
+            justify-content:center;
+            width:auto;
+            opacity:0;
+            pointer-events:none;
+            transition:all 350ms ease-in-out;
+
+            &.show {
+                pointer-events:auto;
+                opacity:1;
+            }
+        }
+
+        .download {
+            cursor:pointer;
+            background:$blue;
+            color:$primary;
+            display:flex;
+            grid-gap:rem(10);
+            align-items:center;
+
+            &:hover {
+                background:white;
+            }
+        }
+
+        .throw_error {
+            width:100%;
+            font-weight:$bold;
+            color:$primary;
+        }
     }
 }
 
