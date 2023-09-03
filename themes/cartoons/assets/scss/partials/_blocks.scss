@@ -100,14 +100,75 @@
             }
         }
 
-        canvas {
+        #canvas-wrap {
             width:100%;
-            background:#eee url(../../assets/images/guy.svg) no-repeat bottom center /cover;
             border-radius:rem(30);
             border:4px solid $primary;
+            overflow:hidden;
+            display:flex;
+            position:relative;
 
             @media(min-width:1000px) {
                 max-width:58%;
+            }
+
+            &:before,
+            &:after {
+                position:absolute;
+                content:'';
+                display:block;
+                pointer-events:none;
+                opacity:0;
+            }
+
+            &:after {
+                width:100%;
+                height:100%;
+                background:rgba(243,243,255,0.65);
+                z-index:2;
+                transition:all 350ms ease-in-out;
+                z-index:2;
+            }
+
+            &:before {
+                top: 50%;
+                left: 50%;
+                width: 100px;
+                height: 100px;
+                margin-left:-50px;
+                margin-top:-50px;
+                border-radius:50%;
+                border: 10px solid $purple;
+                border-top-color:$pink;
+                animation: loading 2s linear infinite;
+                z-index:3;
+            }
+
+            &.loading {
+                &:before,
+                &:after {
+                    opacity:1;
+                    pointer-events:auto;
+                }
+            }
+        }
+
+        canvas {
+            width:100%;
+            height:100%;
+            background:$blue url(../../assets/images/guy.svg) no-repeat bottom center /cover;
+            transition:all 350ms ease-in-out;
+
+            .canvas-loader {
+                background:$black;
+                width:100px;
+                height:100px;
+                position:absolute;
+                left:50%;
+                top:50%;
+                transform:translate3d(-50%,-50%,0);
+                opacity:0;
+                transition:all 350ms ease-in-out;
             }
         }
 
@@ -191,6 +252,15 @@
             color:$primary;
         }
     }
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 ::placeholder {
