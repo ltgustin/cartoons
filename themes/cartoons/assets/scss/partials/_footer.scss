@@ -23,6 +23,75 @@
     }
 }
 
+#player {
+    position: fixed;
+    bottom:rem(10);
+    left:rem(10);
+
+    #player-track {
+        position: absolute;
+        top: 0;
+        left:25px;
+        padding:rem(10);
+        width:rem(250);
+        height:56px;
+        background-color:$primary;
+        border-radius:0 rem(30) rem(30) 0;
+        transition: 0.3s ease opacity;
+        z-index: 1;
+        pointer-events:none;
+        opacity:0;
+        display:flex;
+        align-items:center;
+
+        &.active {
+            opacity:1;
+            pointer-events:auto;
+        }
+    }
+
+    #track-name {
+        color:white;
+        font-size: rem(15);
+        margin:0 0 0 rem(40);
+    }
+
+    #player-content {
+        position: relative;
+        height: 56px;
+        width:56px;
+        background-color:$primary;
+        color:white;
+        border-radius:50%;
+        z-index: 2;
+    }
+
+    #player-controls {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display:flex;
+        grid-gap:rem(15);
+        align-items:center;
+        justify-content:center;
+    }
+
+    .button {
+        cursor: pointer;
+        font-size:rem(25);
+
+        &:hover {
+            i {
+                color:white;
+            }
+        }
+    }
+
+    .button i {
+        @extend %icon;
+    }
+}
+
 /* - - - - - - - - - - - - - - - - - - - - - - - - - -
 /* BACK TO TOP
 */

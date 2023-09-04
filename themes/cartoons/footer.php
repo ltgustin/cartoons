@@ -9,6 +9,11 @@
 
 <button class="back-to-top icon-up"></button>
 
+<?php
+// PLAYLIST
+get_template_part('/templates/playlist');
+?>
+
 </footer>
 
 <?php wp_footer(); ?>
