@@ -14,7 +14,7 @@
 .main-nav {
     @media(min-width:$sm) {
         display:flex;
-        grid-gap:rem(50);
+        grid-gap:rem(25);
 
         li {
             position:relative;
@@ -123,6 +123,10 @@
             }
         }
     }
+
+    @media(min-width:1000px) {
+        grid-gap:rem(50);
+    }
 }
 
 .nav-wrap {
@@ -176,15 +180,15 @@
     }
 
     .nav-wrap {
-        background:$gray;
+        background:linear-gradient(to right, #f3f2ff 50%, white);
         height:auto;
         display: block;
         position:fixed;
         right:-100%;
-        top:$header_height;
+        top:$header_height_mobile;
         width:100%;
         z-index: 1005;
-        height:calc(100vh - #{$header_height});
+        height:calc(100dvh - #{$header_height_mobile});
         overflow-y:scroll;
         transition:right 600ms ease-in-out;
     }
@@ -195,6 +199,10 @@
         }
     }
 
+    .social-nav {
+        margin-top:rem(25);
+    }
+
     .main-nav {
         li {
             width:100%;
@@ -202,29 +210,25 @@
 
             a {
                 display:block;
-                color:$black;
-                font-size:rem(22);
+                color:$primary;
+                font-size:rem(25);
                 text-align:center;
+                font-family:$title;
             }
         }
 
         > li {
             position:relative;
-            border-bottom:1px solid $gray_dark;
+            border-bottom:1px solid #e0e2f0;
 
             > a {
-                padding:18px 0 18px 18px;
+                padding:rem(25) 0 rem(25) rem(30);
                 line-height:1;
-                font-size:rem(17);
                 text-align:left;
             }
 
             &.menu-item-has-children > a {
                 width:calc(100% - 53px);
-            }
-
-            &.search-toggle {
-                display:none;
             }
 
             > .sub-menu {
@@ -296,5 +300,11 @@
                 }
             }
         }
+    }
+}
+
+@media(max-width:480px) {
+    .wp-block-spacer {
+        max-height:4.5rem;
     }
 }

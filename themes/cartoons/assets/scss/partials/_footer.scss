@@ -27,6 +27,11 @@
     position: fixed;
     bottom:rem(10);
     left:rem(10);
+    z-index:200;
+
+    @media(max-width:600px) {
+        display:none;
+    }
 
     #player-track {
         position: absolute;
@@ -43,11 +48,6 @@
         opacity:0;
         display:flex;
         align-items:center;
-
-        &.active {
-            opacity:1;
-            pointer-events:auto;
-        }
     }
 
     #track-name {
@@ -85,11 +85,36 @@
                 color:white;
             }
         }
+
+        .icon-music {
+
+        }
     }
 
     .button i {
         @extend %icon;
     }
+
+    // playing
+    &.playing {
+        #player-track {
+            opacity:1;
+            pointer-events:auto;
+        }
+
+        .button#play-pause-button {
+            animation: spinning 5s linear infinite;
+        }
+    }
+}
+
+@keyframes spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - -

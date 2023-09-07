@@ -32,7 +32,7 @@ if(!empty($songs)) :
                     endif;
 
                     echo '<div class="button" id="play-pause-button">';
-                        echo '<i class="icon-play"></i>';
+                        echo '<i class="icon-music"></i>';
                     echo '</div>'; // play
 
                     if($count > 1) :
@@ -51,7 +51,6 @@ if(!empty($songs)) :
 jQuery(function($){
     // PLAYLIST
     var playerWrap = $('#player'),
-        playerTrack = $("#player-track"), 
         trackName = $('#track-name'), 
         playPauseButton = $("#play-pause-button"), 
         i = playPauseButton.find('i'), 
@@ -67,14 +66,12 @@ jQuery(function($){
     function playPause() {
         setTimeout(function() {
             if(audio.paused) {
-                playerTrack.addClass('active');
+                playerWrap.addClass('playing');
                 checkBuffering();
-                i.attr('class','icon-pause');
                 audio.play();
             } else {
-                playerTrack.removeClass('active');
+                playerWrap.removeClass('playing');
                 clearInterval(buffInterval);
-                i.attr('class','icon-play');
                 audio.pause();
             }
         },300);
@@ -101,11 +98,11 @@ jQuery(function($){
             --currIndex;
 
         if( (currIndex > -1) && (currIndex < trackNames.length) ) {
-            if( flag == 0 ) {
-                i.attr('class','fa icon-play');
-            } else {
-                i.attr('class','fa icon-pause');
-            }
+            // if( flag == 0 ) {
+            //     i.attr('class','fa icon-music');
+            // } else {
+            //     i.attr('class','fa icon-pause');
+            // }
 
             currTrackName = trackNames[currIndex];
 
