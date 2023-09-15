@@ -252,6 +252,35 @@
             color:$primary;
         }
     }
+
+    &.table-of-contents {
+        position:sticky;
+        border:4px solid $primary;
+        border-radius:rem(20);
+        background:rgba(white,0.5);
+        padding:rem(20);
+        margin-top:rem(20);
+        top:rem(100);
+
+        .title {
+            color:$primary;
+            margin-bottom:rem(15);
+            font-family:$title;
+            font-size:rem(26);
+            text-transform:uppercase;
+        }
+
+        p {
+            a {
+                font-style:normal;
+                color:black;
+
+                &:hover {
+                    color:$primary;
+                }
+            }
+        }
+    }
 }
 
 @keyframes loading {

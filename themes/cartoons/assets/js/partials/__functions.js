@@ -36,67 +36,6 @@ jQuery(function($){
       });
 
     /* - - - - - - - - - - - - - - - - - - - - - - - - - -
-    /* TINY SLIDER STUFF
-    */
-   
-    // $('.wp-block-gallery').each(function(i){
-    //     $(this).append('swiper-slide');
-    // });
-
-    setTimeout(function() {
-      var gutenberg_swiper = new Swiper('.wp-block-gallery', {
-        // loop: true,
-        wrapperClass: 'blocks-gallery-grid', // what is wrapping the individual items
-        slideClass: 'blocks-gallery-item', // individual slide
-        // slideActiveClass: 'active',
-        slidesPerView: 1,
-        // spaceBetween: 10,
-        // Responsive breakpoints
-        // breakpoints: {
-        //   420: {
-        //     slidesPerView: 2,
-        //   },
-        //   768: {
-        //     slidesPerView: 3,
-        //   },
-        //   960: {
-        //     slidesPerView: 4,
-        //   }
-        // },
-
-        // pagination: {
-        //   el: '.swiper-pagination',
-        // },
-
-        // navigation: {
-        //   nextEl: '.swiper-button-next',
-        //   prevEl: '.swiper-button-prev',
-        // },
-      })
-    }, 50);
-
-    /* - - - - - - - - - - - - - - - - - - - - - - - - - -
-    /* MICROMODAL - https://micromodal.now.sh/
-    */
-   
-   // example of trigger one specifically:
-   // MicroModal.show('ID');
-   // MicroModal.close('ID');
-   
-    MicroModal.init({
-      // onShow: modal => console.info(`${modal.id} is shown`),
-      // onClose: modal => console.info(`${modal.id} is hidden`),
-      // openTrigger: 'data-custom-open',
-      // closeTrigger: 'data-custom-close',
-      // openClass: 'is-open',
-      // disableScroll: true,
-      // disableFocus: false,
-      // awaitOpenAnimation: false,
-      // awaitCloseAnimation: false,
-      // debugMode: true
-    });
-
-    /* - - - - - - - - - - - - - - - - - - - - - - - - - -
     /* BACK TO TOP
     */
     var backtotop = $('.back-to-top');
@@ -111,61 +50,6 @@ jQuery(function($){
         e.preventDefault();
         $('html, body').animate({scrollTop:0}, '400');
     });
-
-    /* - - - - - - - - - - - - - - - - - - - - - - - - - -
-    /* SCROLL TO CUSTOM
-    */
-    ltgscripts.ltgScrollTo = function(element, milliseconds, noffset, onlyWhenBelow){
-        if ( !noffset ){
-            var noffset = 0; //Note: This selector should be the height of the fixed header.
-        }
-
-        //Call this function with a jQuery object to trigger scroll to an element (not just a selector string).
-        if ( element ){
-            var willScroll = true;
-            if ( onlyWhenBelow ){
-                var elementTop = element.offset().top-noffset;
-                var viewportTop = jQuery(document).scrollTop();
-                if ( viewportTop-elementTop <= 0 ){
-                    willScroll = false;
-                }
-            }
-
-            if ( willScroll ){
-                if ( !milliseconds ){
-                    var milliseconds = 500;
-                }
-
-                jQuery('html, body').animate({
-                    scrollTop: element.offset().top-noffset
-                }, milliseconds, function(){
-                    //callback
-                });
-            }
-
-            return false;
-        }
-    }
-    
-    // variables
-    var headerHeight = $('header').outerHeight(),
-        alertHeight = 0,
-        scrollOffset = headerHeight + alertHeight + 25;
-
-    // anchor links scroll //
-    $(document).on('click', 'a[href^="#"]', function(event) {
-        event.preventDefault();
-        element = $($.attr(this, 'href'));
-        
-        ltgScrollTo(element,800,scrollOffset,false);
-    });
-
-    // *only* if we have anchor on the url
-    if(window.location.hash) {
-        var element = $(window.location.hash);
-
-        ltgScrollTo(element,800,scrollOffset,false);
-    }
 
     /* - - - - - - - - - - - - - - - - - - - - - - - - - -
     /* AJAX FILTER
