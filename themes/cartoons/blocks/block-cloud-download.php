@@ -66,6 +66,8 @@ echo '</div>';
                     let image_temp = response.nft.image_url;
                     let image_resized = image_temp.replace('w=500', 'w=1000');
 
+                    console.log(response.nft);
+
 
                     canvas = document.getElementById('download-canvas');
                     let context = canvas.getContext('2d');

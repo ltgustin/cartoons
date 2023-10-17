@@ -76,7 +76,7 @@
         grid-gap:rem(25);
     }
 
-    @media(min-width:$sm) {
+    @media(min-width:900px) {
         .hamburger {
             display:none;
         }
